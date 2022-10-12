@@ -1,0 +1,45 @@
+li {
+  list-style: none;
+}
+
+.input,
+.edit {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid rgb(136, 128, 128, 0.4);
+  border-radius: 2px;
+  padding: 8px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox_wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 380px;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.title {
+  font-size: 24px;
+  margin-left: 12px;
+  word-break: break-all;
+}
+
+.completed {
+  color: rgb(136, 128, 128, 0.4);
+  text-decoration: line-through;
+}
+
+.edit {
+  padding-left: 40px;
+}
