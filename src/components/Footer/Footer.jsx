@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Button from '../Button';
 import TaskFilter from '../TaskFilter';
+
 import classes from './Footer.module.scss';
 
 const Footer = ({ onFilter, currentFilter, onClearAllCompleted, taskItems }) => {

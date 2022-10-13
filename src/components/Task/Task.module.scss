@@ -4,11 +4,11 @@ li {
 
 .input,
 .edit {
-  width: 100%;
+  box-sizing: border-box;
   background-color: #fff;
   border: 2px solid rgb(136, 128, 128, 0.4);
   border-radius: 2px;
-  padding: 8px;
+  padding: 16px;
 }
 
 .input {
@@ -41,5 +41,5 @@ li {
 }
 
 .edit {
-  padding-left: 40px;
+  padding-left: 52px;
 }

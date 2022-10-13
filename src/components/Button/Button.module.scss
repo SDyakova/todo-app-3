@@ -6,6 +6,12 @@
   border: 1px solid transparent;
 
   cursor: pointer;
+
+  &.btn:hover,
+  .selected {
+    opacity: 0.8;
+    border: 1px solid rgb(136, 128, 128, 0.4);
+  }
 }
 
 .edit {
@@ -18,8 +24,8 @@
   background-color: rgb(244, 216, 216);
 }
 
-.btn:hover,
-.selected {
-  opacity: 0.8;
-  border: 1px solid rgb(136, 128, 128, 0.4);
-}
+// .btn:hover,
+// .selected {
+//   opacity: 0.8;
+//   border: 1px solid rgb(136, 128, 128, 0.4);
+// }

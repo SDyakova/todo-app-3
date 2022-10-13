@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import Button from '../Button/Button';
+
 import classes from './Task.module.scss';
 
 const Task = ({ id, title, onDeleted, onEditingTask, onCompleted, isCompleted }) => {

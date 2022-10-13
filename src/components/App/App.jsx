@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
+
 import TaskList from '../TaskList';
 import NewTaskForm from '../NewTaskForm';
 import Footer from '../Footer';
+import { mockData } from '../../mocks/mocks';
+
 import classes from './App.module.scss';
 
 let maxId = 100;
 
-function App() {
-  const createTask = (text) => {
-    return {
-      id: maxId++,
-      title: text,
-      isCompleted: false,
-    };
-  };
-
+const App = () => {
   const initialState = {
-    taskItems: [createTask('New Task1'), createTask('New Task2'), createTask('New Task3')],
+    taskItems: [...mockData],
     filteredItems: [],
     currentFilter: 'All',
   };
@@ -24,11 +19,11 @@ function App() {
   const { taskItems, filteredItems, currentFilter } = appState;
 
   const addTask = (e) => {
-    const newTask = createTask(e.target.value);
+    const newTask = { id: maxId++, title: e.target.value, isCompleted: false };
+
     if (e.key === 'Enter') {
       setAppState((appState) => {
-        const newArr = [...taskItems, newTask];
-        return { ...appState, taskItems: newArr };
+        return { ...appState, taskItems: [...taskItems, newTask] };
       });
       e.target.value = '';
     }
@@ -37,6 +32,7 @@ function App() {
   const deleteTask = (id) => {
     setAppState((appState) => {
       const newArr = taskItems.filter((task) => task.id !== id);
+
       return { ...appState, taskItems: newArr };
     });
   };
@@ -44,6 +40,7 @@ function App() {
   const editTask = (title, id) => {
     setAppState((appState) => {
       const newArr = taskItems.map((task) => (task.id === id ? { ...task, title } : task));
+
       return { ...appState, taskItems: newArr };
     });
   };
@@ -51,6 +48,7 @@ function App() {
   const onToggleCompleted = (id) => {
     setAppState((appState) => {
       const newArr = taskItems.map((task) => (task.id === id ? { ...task, isCompleted: !task.isCompleted } : task));
+
       return { ...appState, taskItems: newArr };
     });
   };
@@ -58,6 +56,7 @@ function App() {
   const getFilteredItems = (title) => {
     setAppState((appState) => {
       let filteredItems = [];
+
       if (title === 'Completed') {
         filteredItems = taskItems.filter(({ isCompleted }) => isCompleted);
       } else if (title === 'Active') {
@@ -108,6 +107,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
